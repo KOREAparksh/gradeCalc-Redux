@@ -13,6 +13,9 @@ React의 상태관리 라이브러리 Redux를 사용하고, 연습하기 위해
 Language: Javascript ES6, JSX   
 Library: React, Redux, Immer, Styled-Components, Semantic UI React   
 
+### Remarks
+디자인 : Velopert님의 [To-do-List](https://react.vlpt.us/mashup-todolist/)를 참고했습니다.
+
 ### Update Log
 ##### 02/26 View Complete
 
