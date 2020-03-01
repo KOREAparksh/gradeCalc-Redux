@@ -19,5 +19,11 @@ Library: React, Redux, Immer, Styled-Components, Semantic UI React
 ### Update Log
 ##### 02/26 View Complete
 
+### Study Result
+
+##### 리덕스를 이용한 상태관리 도식도 
+![Redux-7](https://user-images.githubusercontent.com/52201658/75629458-9285a980-5c25-11ea-90bd-e1ec6bbab7df.jpg)
+
+
 
 
