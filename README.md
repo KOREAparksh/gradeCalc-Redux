@@ -18,6 +18,7 @@ Library: React, Redux, Immer, Styled-Components, Semantic UI React
 
 ### Update Log
 ##### 02/26 View Complete
+##### 03/04 리덕스 스토어 연동, CalcHead, SubjectList의 Container Component 완성 후 데이터 연동
 
 ### Study Result
 
