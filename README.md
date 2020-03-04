@@ -11,10 +11,16 @@ React의 상태관리 라이브러리 Redux를 사용하고, 연습하기 위해
 
 ### TechSet
 Language: Javascript ES6, JSX   
-Library: React, Redux, Immer, Styled-Components, Semantic UI React   
+Library: React, Redux, Styled-Components, Semantic UI React   
 
 ### Remarks
 디자인 : Velopert님의 [To-do-List](https://react.vlpt.us/mashup-todolist/)를 참고했습니다.
+
+### Comments
+1. 불변성 유지를 쉽게하기 위한 Library인 Immer을 사용하고 싶었지만, 불변성 유지가 어려울 정도의 깊이를 가지고 있는 객체가 없어서 스킵.
+기회가 된다면 써보고 싶다.   
+2. Container Componenet를 만들었으면 제발 App.js에 적용하자 (제발!)
+
 
 ### Update Log
 ##### 02/26 View Complete
@@ -24,6 +30,7 @@ Library: React, Redux, Immer, Styled-Components, Semantic UI React
 
 ##### 리덕스를 이용한 상태관리 도식도 
 ![Redux-7](https://user-images.githubusercontent.com/52201658/75629458-9285a980-5c25-11ea-90bd-e1ec6bbab7df.jpg)
+
 
 
 
