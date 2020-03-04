@@ -15,16 +15,25 @@ const CalcHeadBlock = styled.div`
   .grade {
     color: #20c997;
     font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  .credits {
+    color: #000000;
+    font-size: 18px;
     margin-top: 40px;
     font-weight: bold;
   }
 `;
 
-function CalcHead() {
+function CalcHead({ totalCredits, averageGrade }) {
   return (
     <CalcHeadBlock>
       <h1>학점 계산기</h1>
-      <div className="grade">평균 평점 : 3.5</div>
+      <div>
+        <div className="credits">이수 학점 : {totalCredits}</div>
+        <div className="grade">평균 평점 : {averageGrade.toFixed(1)}</div>
+      </div>
     </CalcHeadBlock>
   );
 }

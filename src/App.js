@@ -4,6 +4,8 @@ import CalcTemplate from "./componenets/CalcTemplate";
 import CalcHead from "./componenets/CalcHead";
 import SubjectList from "./componenets/SubjectList";
 import SubjectCreate from "./componenets/SubjectCreate";
+import SubjectListContainer from "./containers/SubjectListContainer";
+import CalcHeadContainer from "./containers/CalcHeadContainer";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -16,8 +18,8 @@ function App() {
     <div>
       <GlobalStyle />
       <CalcTemplate>
-        <CalcHead />
-        <SubjectList />
+        <CalcHeadContainer />
+        <SubjectListContainer />
         <SubjectCreate />
       </CalcTemplate>
     </div>

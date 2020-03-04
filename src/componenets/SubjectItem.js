@@ -64,11 +64,11 @@ const Text = styled.div`
   color: #495057;
 `;
 
-function SubjectItem({ id, done, text }) {
+function SubjectItem({ text, done, credits, grade }) {
   return (
     <SubjectItemBlock>
-      <Credit>3학점</Credit>
-      <Grade>A+</Grade>
+      <Credit>{credits}학점</Credit>
+      <Grade>{grade}</Grade>
       <Text>{text}</Text>
       <Remove>
         <MdDelete />

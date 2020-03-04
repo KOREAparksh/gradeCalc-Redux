@@ -77,9 +77,56 @@ const gradeStyle = {
   marginRight: "30px"
 };
 
+const friendOptions = [
+  {
+    key: "grade",
+    text: "A+",
+    value: 4.5
+  },
+  {
+    key: "grade",
+    text: "A0",
+    value: 4.0
+  },
+  {
+    key: "grade",
+    text: "B+",
+    value: 3.5
+  },
+  {
+    key: "grade",
+    text: "B0",
+    value: 3.0
+  },
+  {
+    key: "grade",
+    text: "C+",
+    value: 2.5
+  },
+  {
+    key: "grade",
+    text: "C0",
+    value: 2
+  },
+  {
+    key: "grade",
+    text: "D+",
+    value: 1.5
+  },
+  {
+    key: "grade",
+    text: "D0",
+    value: 1
+  },
+  {
+    key: "grade",
+    text: "F",
+    value: 0
+  }
+];
+
 function SubjectCreate() {
   const [open, setOpen] = useState(false);
-
   const onToggle = () => setOpen(!open);
 
   return (
@@ -88,19 +135,13 @@ function SubjectCreate() {
         <InsertFormPositioner>
           <InsertForm>
             <div className="gradeAndCredit" style={gradeAndCreditStyle}>
-              <Dropdown className="grade" style={gradeStyle} text="평점">
-                <Dropdown.Menu>
-                  <Dropdown.Item text="A+" description="4.5" />
-                  <Dropdown.Item text="A0" description="4.0" />
-                  <Dropdown.Item text="B+" description="3.5" />
-                  <Dropdown.Item text="B0" description="3.0" />
-                  <Dropdown.Item text="C+" description="2.5" />
-                  <Dropdown.Item text="C0" description="2.0" />
-                  <Dropdown.Item text="D+" description="1.5" />
-                  <Dropdown.Item text="D0" description="1.0" />
-                  <Dropdown.Item text="F" description="0.0" />
-                </Dropdown.Menu>
-              </Dropdown>
+              <Dropdown
+                style={gradeStyle}
+                placeholder="평점"
+                fluid
+                selection
+                options={friendOptions}
+              />
               <Input placeholder="학점" />
             </div>
             <Input
