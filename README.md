@@ -1,9 +1,8 @@
 # 학점 계산기 WEB APP
 ![project_start_date](https://img.shields.io/badge/Project%20Start%20Date-2020--02--26-informational.svg)   
 ![project_end_date](https://img.shields.io/badge/Project%20End%20Date-2020--03--08-informational.svg)   
-<img width="614" alt="스크린샷 2020-02-26 오전 3 43 02" src="https://user-images.githubusercontent.com/52201658/75276871-4ebc2a00-584a-11ea-9506-d2dfd10b493c.png">
-
-<img width="614" alt="스크린샷 2020-02-26 오전 3 47 15" src="https://user-images.githubusercontent.com/52201658/75277115-c38f6400-584a-11ea-9138-7967edd8f180.png">
+<img width="614" alt="스크린샷 2020-03-08 오전 2 19 05" src="https://user-images.githubusercontent.com/52201658/76147808-564dbf80-60e3-11ea-8e6f-814c0bc57f82.png">
+<img width="614" alt="스크린샷 2020-03-08 오전 2 19 32" src="https://user-images.githubusercontent.com/52201658/76147811-5948b000-60e3-11ea-9aaf-3361b4ae49a1.png">
 
 
 
