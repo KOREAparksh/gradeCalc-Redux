@@ -1,5 +1,6 @@
 # 학점 계산기 WEB APP
-![project_start_date](https://img.shields.io/badge/Project%20Start%20Date-2020--02--26-informational.svg)  
+![project_start_date](https://img.shields.io/badge/Project%20Start%20Date-2020--02--26-informational.svg)   
+![project_end_date](https://img.shields.io/badge/Project%20End%20Date-2020--03--08-informational.svg)   
 <img width="614" alt="스크린샷 2020-02-26 오전 3 43 02" src="https://user-images.githubusercontent.com/52201658/75276871-4ebc2a00-584a-11ea-9506-d2dfd10b493c.png">
 
 <img width="614" alt="스크린샷 2020-02-26 오전 3 47 15" src="https://user-images.githubusercontent.com/52201658/75277115-c38f6400-584a-11ea-9138-7967edd8f180.png">
@@ -19,12 +20,14 @@ Library: React, Redux, Styled-Components, Semantic UI React
 ### Comments
 1. 불변성 유지를 쉽게하기 위한 Library인 Immer을 사용하고 싶었지만, 불변성 유지가 어려울 정도의 깊이를 가지고 있는 객체가 없어서 스킵.
 기회가 된다면 써보고 싶다.   
-2. Container Componenet를 만들었으면 제발 App.js에 적용하자 (제발!)
+2. Container Componenet를 만들었으면 제발 App.js에 적용하자 (제발!)   
+3. 함수의 호출과 선언을 구분해야 한다. (ex func(), () => {func()} )
 
 
 ### Update Log
-##### 02/26 View Complete
-##### 03/04 리덕스 스토어 연동, CalcHead, SubjectList의 Container Component 완성 후 데이터 연동
+##### 02/26 View Complete.
+##### 03/04 리덕스 스토어 연동, CalcHead, SubjectList의 Container Component 완성 후 데이터 연동.
+##### 03/08 완성. 
 
 ### Study Result
 
