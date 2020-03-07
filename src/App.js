@@ -1,9 +1,7 @@
 import React from "react";
 import { createGlobalStyle } from "styled-components";
 import CalcTemplate from "./componenets/CalcTemplate";
-import CalcHead from "./componenets/CalcHead";
-import SubjectList from "./componenets/SubjectList";
-import SubjectCreate from "./componenets/SubjectCreate";
+import SubjectCreateContainer from "./containers/SubjectCreateContainer";
 import SubjectListContainer from "./containers/SubjectListContainer";
 import CalcHeadContainer from "./containers/CalcHeadContainer";
 
@@ -20,7 +18,7 @@ function App() {
       <CalcTemplate>
         <CalcHeadContainer />
         <SubjectListContainer />
-        <SubjectCreate />
+        <SubjectCreateContainer />
       </CalcTemplate>
     </div>
   );

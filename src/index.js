@@ -6,9 +6,10 @@ import * as serviceWorker from "./serviceWorker";
 import "semantic-ui-css/semantic.min.css";
 import { createStore } from "redux";
 import rootReducers from "./modules";
+import { composeWithDevTools } from "redux-devtools-extension";
 import { Provider } from "react-redux";
 
-const store = createStore(rootReducers);
+const store = createStore(rootReducers, composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>

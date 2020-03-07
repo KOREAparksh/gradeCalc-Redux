@@ -1,8 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import CalcHead from "../componenets/CalcHead";
 
 function getAverageGrade(subjects) {
+  if (subjects.length === 0) return 0;
   let sum = 0;
   subjects.map(subject => (sum += subject.grade));
   return sum / subjects.length;

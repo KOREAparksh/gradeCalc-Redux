@@ -1,10 +1,12 @@
 import { createAction, handleActions } from "redux-actions";
 
 const CHANGE_INPUT = "subject/CHANGE_INPUT";
+const CLEAR_INPUT = "subject/CLEAR_INPUT";
 const ADD = "subject/ADD";
 const REMOVE = "subject/REMOVE";
 
-export const changeInput = createAction(CHANGE_INPUT, input => input);
+export const changeInput = createAction(CHANGE_INPUT, target => target);
+export const clearInput = createAction(CLEAR_INPUT);
 
 let id = 3;
 export const add = createAction(ADD, subject => ({
@@ -17,7 +19,9 @@ export const add = createAction(ADD, subject => ({
 export const remove = createAction(REMOVE, id => id);
 
 const initialState = {
-  input: "",
+  subjectInput: "",
+  gradeInput: "",
+  creditInput: "",
   subjects: [
     {
       id: 1,
@@ -36,14 +40,23 @@ const initialState = {
 
 const subject = handleActions(
   {
-    [CHANGE_INPUT]: (state, { payload: input }) => ({ ...state, input: input }),
+    [CHANGE_INPUT]: (state, action) => ({
+      ...state,
+      [action.payload.name]: action.payload.value
+    }),
+    [CLEAR_INPUT]: (state, action) => ({
+      ...state,
+      subjectInput: "",
+      gradeInput: "",
+      creditInput: ""
+    }),
     [ADD]: (state, { payload: subject }) => ({
       ...state,
-      subject: state.subjects.concat(subject)
+      subjects: state.subjects.concat(subject)
     }),
     [REMOVE]: (state, { payload: id }) => ({
       ...state,
-      subject: state.subjects.filter(subject => subject.id !== id)
+      subjects: state.subjects.filter(subject => subject.id !== id)
     })
   },
   initialState

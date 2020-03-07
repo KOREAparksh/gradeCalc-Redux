@@ -1,16 +1,17 @@
 import React from "react";
 import SubjectList from "../componenets/SubjectList";
 import { useSelector, useDispatch } from "react-redux";
+import { remove } from "../modules/subject";
 
 function SubjectListContainer() {
   const state = useSelector(state => state.subject);
-  const { subjects, input } = state;
-
+  const { subjects } = state;
   const dispatch = useDispatch();
 
-  console.log(state);
-
-  return <SubjectList input={input} subjects={subjects} />;
+  //향후, remove가 이리로 가야한다.
+  return (
+    <SubjectList subjects={subjects} remove={id => dispatch(remove(id))} />
+  );
 }
 
 export default SubjectListContainer;

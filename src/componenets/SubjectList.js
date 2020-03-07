@@ -34,7 +34,7 @@ const SubjectListBlock = styled.div`
   overflow-y: auto;
 `;
 
-function SubjectList({ input, subjects }) {
+function SubjectList({ subjects, remove }) {
   return (
     <SubjectListBlock>
       <div>
@@ -44,6 +44,8 @@ function SubjectList({ input, subjects }) {
             credits={subject.credits}
             grade={makeNumberGradeToStringGrade(subject.grade)}
             done={false}
+            id={subject.id}
+            remove={remove}
           />
         ))}
       </div>

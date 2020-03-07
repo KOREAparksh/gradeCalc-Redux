@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import { MdAdd } from "react-icons/md";
 
-import { Dropdown, Input } from "semantic-ui-react";
+import { Input, Button, Icon } from "semantic-ui-react";
 
 const CircleButton = styled.button`
   background: #38d9a9;
@@ -69,85 +69,90 @@ const InsertForm = styled.form`
 
 const gradeAndCreditStyle = {
   display: "flex",
-  alignItems: "center",
-  padding: "12px"
+  marginTop: "5px"
 };
 
-const gradeStyle = {
-  marginRight: "30px"
-};
+function isInvalidGrade(gradeInput) {
+  let checkValidInput = (gradeInput * 10) % 10;
 
-const friendOptions = [
-  {
-    key: "grade",
-    text: "A+",
-    value: 4.5
-  },
-  {
-    key: "grade",
-    text: "A0",
-    value: 4.0
-  },
-  {
-    key: "grade",
-    text: "B+",
-    value: 3.5
-  },
-  {
-    key: "grade",
-    text: "B0",
-    value: 3.0
-  },
-  {
-    key: "grade",
-    text: "C+",
-    value: 2.5
-  },
-  {
-    key: "grade",
-    text: "C0",
-    value: 2
-  },
-  {
-    key: "grade",
-    text: "D+",
-    value: 1.5
-  },
-  {
-    key: "grade",
-    text: "D0",
-    value: 1
-  },
-  {
-    key: "grade",
-    text: "F",
-    value: 0
-  }
-];
+  console.log(checkValidInput, gradeInput);
 
-function SubjectCreate() {
+  if (checkValidInput !== 0 && checkValidInput !== 5) return true;
+  console.log("소숫점통과");
+  if (gradeInput < 0 && gradeInput === 0.5 && gradeInput > 4.5) return true;
+  console.log("숫자범위통과");
+  return false;
+}
+
+function SubjectCreate({
+  subjectInput,
+  gradeInput,
+  creditInput,
+  changeInput,
+  add,
+  clearInput
+}) {
   const [open, setOpen] = useState(false);
   const onToggle = () => setOpen(!open);
+
+  const onChange = e => {
+    changeInput(e.target);
+  };
+
+  const onClear = () => {
+    clearInput();
+  };
+
+  const onClick = e => {
+    e.preventDefault();
+
+    if (isInvalidGrade(Number(gradeInput))) {
+      alert("평점 입력이 잘못되었습니다.");
+    } else {
+      const subject = {
+        name: subjectInput,
+        credits: Number(creditInput),
+        grade: Number(gradeInput)
+      };
+      add(subject);
+      onClear();
+    }
+  };
 
   return (
     <>
       {open && (
         <InsertFormPositioner>
           <InsertForm>
-            <div className="gradeAndCredit" style={gradeAndCreditStyle}>
-              <Dropdown
-                style={gradeStyle}
-                placeholder="평점"
-                fluid
-                selection
-                options={friendOptions}
-              />
-              <Input placeholder="학점" />
-            </div>
             <Input
-              placeholder="과목명을 입력한 뒤, Enter을 누르세요"
+              placeholder="과목명"
               style={{ width: "100%" }}
+              name="subjectInput"
+              value={subjectInput}
+              onChange={onChange}
             />
+
+            <div className="gradeAndCredit" style={gradeAndCreditStyle}>
+              <Input
+                placeholder="평점(숫자)"
+                type="number"
+                name="gradeInput"
+                value={gradeInput}
+                onChange={onChange}
+              />
+
+              <Input
+                placeholder="학점"
+                type="number"
+                name="creditInput"
+                value={creditInput}
+                onChange={onChange}
+              />
+
+              <Button icon onClick={onClick}>
+                <Icon name="add" />
+              </Button>
+            </div>
           </InsertForm>
         </InsertFormPositioner>
       )}
